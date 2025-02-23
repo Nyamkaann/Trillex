@@ -73,7 +73,7 @@ export default function About() {
                 <h3 className="text-xl font-bold text-[#00879E] mb-2">Ts Otgontsetseg</h3>
                 <p className="text-gray-600 font-medium mb-4">Founder & CEO</p>
                 <p className="text-gray-500 text-sm">
-                  Brief description about the CEO's experience and role in the company.
+                  Brief description about the CEO&apos;s experience and role in the company.
                 </p>
               </div>
 
@@ -92,7 +92,7 @@ export default function About() {
                 <h3 className="text-xl font-bold text-[#00879E] mb-2">G Oulen</h3>
                 <p className="text-gray-600 font-medium mb-4">Director of Operations</p>
                 <p className="text-gray-500 text-sm">
-                  Brief description about the Director's experience and responsibilities.
+                  Brief description about the Director&apos;s experience and responsibilities.
                 </p>
               </div>
 
@@ -111,7 +111,7 @@ export default function About() {
                 <h3 className="text-xl font-bold text-[#00879E] mb-2">G Tergel</h3>
                 <p className="text-gray-600 font-medium mb-4">Chief Technology Officer</p>
                 <p className="text-gray-500 text-sm">
-                  Brief description about the CTO's expertise and technical leadership.
+                  Brief description about the CTO&apos;s expertise and technical leadership.
                 </p>
               </div>
             </div>

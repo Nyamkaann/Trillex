@@ -83,8 +83,8 @@ export default function Services() {
                       <Image
                         src={section.icon}
                         alt=""
-                        fill
-                        className="object-contain"
+                        layout="fill"
+                        objectFit="cover"
                       />
                     </div>
                   )}
