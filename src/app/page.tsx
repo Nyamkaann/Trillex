@@ -266,6 +266,63 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* ISO Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col lg:flex-row gap-12 items-center">
+            {/* ISO Image */}
+            <div className="lg:w-1/3">
+              <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
+                <Image
+                  src="/images/iso.png"
+                  alt="ISO Certification"
+                  fill
+                  className="object-contain"
+                />
+              </div>
+            </div>
+
+            {/* Content */}
+            <div className="lg:w-2/3 space-y-6">
+              <h2 className="text-3xl font-bold text-[#00879E] leading-tight">
+                TRILLEX IS COMPLIANT WITH THE REQUIREMENTS OF THE MNS ISO 20700:2017 STANDARD FOR MANAGEMENT CONSULTING SERVICES
+              </h2>
+              
+              <p className="text-gray-600">
+                Trillex provides consulting services with the highest level of professional ethics, adhering to principles of integrity, 
+                independence, and client satisfaction, while ensuring compliance with confidentiality standards, legal, and regulatory requirements.
+              </p>
+
+              <div className="space-y-4">
+                <p className="text-gray-600">
+                  When delivering consulting services that meet quality standards for management system improvement, we follow the ISO 9001: 
+                  Quality Management System framework, implementing the PDCA (Plan-Do-Check-Act) cycle in four stages:
+                </p>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
+                  <div className="bg-gray-50 p-6 rounded-lg">
+                    <h3 className="text-[#00879E] font-semibold mb-2">Plan</h3>
+                    <p className="text-gray-600">Develop strategies and set objectives.</p>
+                  </div>
+                  <div className="bg-gray-50 p-6 rounded-lg">
+                    <h3 className="text-[#00879E] font-semibold mb-2">Do</h3>
+                    <p className="text-gray-600">Implement the planned processes.</p>
+                  </div>
+                  <div className="bg-gray-50 p-6 rounded-lg">
+                    <h3 className="text-[#00879E] font-semibold mb-2">Check</h3>
+                    <p className="text-gray-600">Monitor and evaluate the outcomes.</p>
+                  </div>
+                  <div className="bg-gray-50 p-6 rounded-lg">
+                    <h3 className="text-[#00879E] font-semibold mb-2">Act</h3>
+                    <p className="text-gray-600">Improve and optimize based on findings.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   )
 }
