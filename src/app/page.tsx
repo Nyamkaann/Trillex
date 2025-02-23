@@ -154,6 +154,118 @@ export default function Home() {
           )}
         </div>
       </section>
+
+      {/* Purpose Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-4xl font-bold text-[#00879E] text-center mb-16">Our Purpose</h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* SDG 1 - No Poverty */}
+            <div className="flex flex-col items-center text-center">
+              <div className="relative h-48 w-48 mb-6">
+                <Image
+                  src="/images/no-poverty.png"
+                  alt="SDG 1 - No Poverty"
+                  fill
+                  className="object-contain"
+                />
+              </div>
+              <h3 className="text-xl font-bold text-[#00879E] mb-4">Financial Inclusion</h3>
+              <div className="space-y-4">
+                <p className="text-gray-600">
+                  Within the Framework of Eradicating Poverty in All Forms and Everywhere:
+                  For SDG 1, the focus is on eliminating all forms of poverty, including income inequality, 
+                  lack of access to resources, and social exclusion.
+                </p>
+                <p className="text-gray-600">
+                  Strengthening the transformative capacity of the microfinance sector as a powerful tool 
+                  for combating poverty: By empowering NBFIs (Non-Bank Financial Institutions) through 
+                  training and consulting services, we contribute to the sector's advancement and make a 
+                  meaningful impact on the country's economic development by promoting financial inclusion 
+                  and creating new opportunities.
+                </p>
+                <p className="text-gray-600">
+                  The company is dedicated to empowering NBFIs operating in rural areas and supporting 
+                  micro-entrepreneurs by providing free training, research, and business development 
+                  assistance. Additionally, we aim to enhance investment and collaboration opportunities, 
+                  improve policies and regulations, and ultimately increase their competitiveness in the market.
+                </p>
+              </div>
+            </div>
+
+            {/* SDG 8 - Decent Work */}
+            <div className="flex flex-col items-center text-center">
+              <div className="relative h-48 w-48 mb-6">
+                <Image
+                  src="/images/decent-work.png"
+                  alt="SDG 8 - Decent Work"
+                  fill
+                  className="object-contain"
+                />
+              </div>
+              <h3 className="text-xl font-bold text-[#00879E] mb-4">Economic Growth</h3>
+              <div className="space-y-4">
+                <p className="text-gray-600">
+                  Our goal is to help microfinance institutions develop innovative and sustainable business models 
+                  that connect them to economic growth and employment opportunities. By supporting micro-entrepreneurs, 
+                  we aim to create jobs and reduce income inequality.
+                </p>
+                <p className="text-gray-600">
+                  <span className="font-medium text-[#00879E]">Job Creation:</span> We focus on providing financial 
+                  support to microfinance institutions and small and medium-sized enterprises (SMEs), with a particular 
+                  emphasis on creating jobs for women, youth, and rural communities.
+                </p>
+                <p className="text-gray-600">
+                  <span className="font-medium text-[#00879E]">Business Development:</span> We offer training and 
+                  consulting services to micro-entrepreneurs to help them develop business management, financial literacy, 
+                  and marketing skills.
+                </p>
+                <p className="text-gray-600">
+                  <span className="font-medium text-[#00879E]">Sustainable Economic Growth:</span> By increasing 
+                  financial inclusion, we create growth and expansion opportunities for small businesses, ultimately 
+                  contributing to economic development.
+                </p>
+              </div>
+            </div>
+
+            {/* SDG 13 - Climate Action */}
+            <div className="flex flex-col items-center text-center">
+              <div className="relative h-48 w-48 mb-6">
+                <Image
+                  src="/images/climate-action.jpg"
+                  alt="SDG 13 - Climate Action"
+                  fill
+                  className="object-contain"
+                />
+              </div>
+              <h3 className="text-xl font-bold text-[#00879E] mb-4">Climate Action</h3>
+              <div className="space-y-4">
+                <p className="text-gray-600">
+                  <span className="font-medium text-[#00879E]">Sustainable Business Practices:</span> Integrating 
+                  Environmental Sustainability into Daily Operations
+                </p>
+                <p className="text-gray-600">
+                  <span className="font-medium text-[#00879E]">Policy Implementation:</span> We aim to reduce our 
+                  carbon footprint by adopting energy-efficient practices, minimizing paper waste, and promoting 
+                  digital solutions that lessen environmental impact.
+                </p>
+                <p className="text-gray-600">
+                  <span className="font-medium text-[#00879E]">Sustainable Business Operations:</span> We support 
+                  clients in transitioning to more sustainable business practices by providing consulting services 
+                  on environmental and social risk assessments and sustainability strategy development.
+                </p>
+                <p className="text-gray-600">
+                  <span className="font-medium text-[#00879E]">Green Finance:</span> We are committed to developing 
+                  and promoting financial products that support environmentally friendly businesses. This includes 
+                  consulting on renewable energy projects, eco-friendly agricultural practices, and green infrastructure 
+                  projects that contribute to climate change mitigation.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   )
 }
