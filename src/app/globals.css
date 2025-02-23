@@ -19,3 +19,21 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Custom styles for the services slider */
+.services-slider .slick-slide {
+  padding: 10px;
+}
+
+.services-slider .slick-dots li button:before {
+  color: #00879E;
+}
+
+.services-slider .slick-dots li.slick-active button:before {
+  color: #00879E;
+}
+
+.services-slider .slick-prev:before,
+.services-slider .slick-next:before {
+  color: #00879E;
+}
