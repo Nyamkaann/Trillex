@@ -114,81 +114,14 @@ export default function Contact() {
             <h2 className="text-2xl font-bold text-[#00879E] mb-6">
               {language === 'en' ? 'Send us a Message' : 'Бидэнд мессеж илгээх'}
             </h2>
-            
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                  {language === 'en' ? 'Full Name' : 'Бүтэн нэр'}
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#00879E] focus:border-transparent transition-colors"
-                  placeholder={language === 'en' ? 'Enter your full name' : 'Бүтэн нэрээ оруулна уу'}
-                />
-              </div>
-
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                  {language === 'en' ? 'Email Address' : 'И-мэйл хаяг'}
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#00879E] focus:border-transparent transition-colors"
-                  placeholder={language === 'en' ? 'Enter your email address' : 'И-мэйл хаягаа оруулна уу'}
-                />
-              </div>
-
-              <div>
-                <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-2">
-                  {language === 'en' ? 'Company/Organization' : 'Компани/Байгууллага'}
-                </label>
-                <input
-                  type="text"
-                  id="company"
-                  name="company"
-                  value={formData.company}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#00879E] focus:border-transparent transition-colors"
-                  placeholder={language === 'en' ? 'Enter your company name' : 'Компанийн нэрийг оруулна уу'}
-                />
-              </div>
-
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                  {language === 'en' ? 'Message' : 'Мессеж'}
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  rows={5}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#00879E] focus:border-transparent transition-colors resize-none"
-                  placeholder={language === 'en' 
-                    ? 'Tell us about your consulting needs and how we can help...'
-                    : 'Таны зөвлөх үйлчилгээний хэрэгцээ болон бид хэрхэн тусалж чадах талаар бидэнд хэлнэ үү...'
-                  }
-                />
-              </div>
-
-              <button
-                type="submit"
-                className="w-full bg-[#00879E] text-white font-medium py-3 px-6 rounded-lg hover:bg-[#007a8a] transition-colors duration-200"
-              >
-                {language === 'en' ? 'Send Message' : 'Мессеж илгээх'}
-              </button>
-            </form>
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSe2ljLceNDakvFoknAdDlAu43Ii2yqAIT2nkZCdgIviU2azxg/viewform"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full block text-center bg-[#00879E] text-white font-medium py-3 px-6 rounded-lg hover:bg-[#007a8a] transition-colors duration-200 text-lg"
+            >
+              {language === 'en' ? 'Open Contact Form' : 'Холбоо барих маягт нээх'}
+            </a>
           </div>
         </div>
       </div>
