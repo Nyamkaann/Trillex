@@ -1,123 +1,74 @@
 'use client'
 
-import { useState } from 'react'
-import Image from 'next/image'
+import { useLanguage } from "@/contexts/LanguageContext";
+import { websiteContent } from "@/constants";
+import { FaCheckCircle } from 'react-icons/fa';
 
-interface ServiceSection {
-  isOpen: boolean
-  title: string
-  content: string
-  icon?: string
-}
-
-export default function Services() {
-  const [sections, setSections] = useState<ServiceSection[]>([
-    {
-      isOpen: false,
-      title: "Training",
-      content: `Our comprehensive training programs cover:
-      • Financial Management
-      • Risk Assessment
-      • Business Development
-      • Leadership Skills
-      • Digital Transformation`,
-      icon: "/icons/training.svg"
-    },
-    {
-      isOpen: false,
-      title: "ISO 9001",
-      content: `We provide complete ISO 9001 consultation services:
-      • Gap Analysis
-      • Documentation Development
-      • Implementation Support
-      • Internal Audit Training
-      • Certification Preparation`,
-      icon: "/icons/iso.svg"
-    },
-    {
-      isOpen: false,
-      title: "Strategic Consulting Services",
-      content: `Our strategic consulting services include:
-      • Business Strategy Development
-      • Market Analysis
-      • Operational Efficiency
-      • Growth Planning
-      • Performance Optimization`,
-      icon: "/icons/strategy.svg"
-    },
-    {
-      isOpen: false,
-      title: "ESG Consulting Services",
-      content: `Comprehensive ESG consulting solutions:
-      • ESG Strategy Development
-      • Sustainability Reporting
-      • Environmental Impact Assessment
-      • Social Responsibility Programs
-      • Governance Framework Design`,
-      icon: "/icons/esg.svg"
-    }
-  ])
-
-  const toggleSection = (index: number) => {
-    setSections(sections.map((section, i) => ({
-      ...section,
-      isOpen: i === index ? !section.isOpen : false
-    })))
-  }
+const ServicesPage = () => {
+  const { language } = useLanguage();
+  const { services } = websiteContent;
 
   return (
-    <main className="min-h-screen py-16">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="text-4xl font-bold text-[#00879E] text-center mb-16">Our Services</h1>
-        
-        <div className="space-y-4">
-          {sections.map((section, index) => (
-            <div key={section.title} className="border border-[#00879E]/20 rounded-lg overflow-hidden">
-              <button
-                onClick={() => toggleSection(index)}
-                className="w-full px-6 py-4 flex items-center justify-between bg-white hover:bg-gray-50 transition-colors"
-              >
-                <div className="flex items-center space-x-4">
-                  {section.icon && (
-                    <div className="w-8 h-8 relative">
-                      <Image
-                        src={section.icon}
-                        alt=""
-                        layout="fill"
-                        objectFit="cover"
-                      />
-                    </div>
-                  )}
-                  <span className="text-xl font-medium text-[#00879E]">{section.title}</span>
+    <div className="bg-gray-50 min-h-screen">
+      {/* Page Header */}
+      <header className="bg-gradient-to-r from-[#00879E] to-[#006d7a] text-white py-16 text-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
+            {services.title[language]}
+          </h1>
+        </div>
+      </header>
+
+      <main className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+        {/* Introduction Section */}
+        <section className="bg-white p-8 rounded-lg shadow-md mb-12">
+          <div className="prose prose-lg max-w-none text-gray-700">
+            {services.introduction[language].map((paragraph, index) => (
+              <p key={index}>{paragraph}</p>
+            ))}
+          </div>
+        </section>
+
+        {/* Offerings Section */}
+        <section className="mb-16">
+          <h2 className="text-3xl font-bold text-center text-[#00879E] mb-10">
+            {services.offering.title[language]}
+          </h2>
+          <div className="grid grid-cols-1 gap-6">
+            {services.offering.list.map((item, index) => (
+              <div key={index} className="flex items-start p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                <FaCheckCircle className="text-green-500 text-2xl mt-1 mr-4 flex-shrink-0" />
+                <p className="text-gray-800 text-lg">{item[language]}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Programs Section */}
+        <section>
+          <div className="space-y-12">
+            {services.programs.map((program, index) => (
+              <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-[1.02]">
+                <div className="bg-[#00879E] text-white p-6">
+                  <h3 className="text-2xl font-bold">{program.title[language]}</h3>
                 </div>
-                <svg
-                  className={`w-6 h-6 transform transition-transform ${section.isOpen ? 'rotate-180' : ''}`}
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
-              </button>
-              
-              {section.isOpen && (
-                <div className="px-6 py-4 bg-gray-50">
-                  <div className="prose max-w-none">
-                    <p className="whitespace-pre-line text-gray-600">
-                      {section.content}
+                <div className="p-8">
+                  <p className="text-gray-700 leading-relaxed mb-6">
+                    {program.description[language]}
+                  </p>
+                  <div className="bg-gray-100 p-4 rounded-md">
+                    <p className="font-semibold text-gray-800">
+                      {program.team[language]}
                     </p>
                   </div>
                 </div>
-              )}
-            </div>
-          ))}
-        </div>
-      </div>
-    </main>
-  )
-} 
+              </div>
+            ))}
+          </div>
+        </section>
+      </main>
+    </div>
+  );
+};
+
+export default ServicesPage; 

@@ -2,10 +2,12 @@
 
 import Link from 'next/link'
 import { useState } from 'react'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isServicesOpen, setIsServicesOpen] = useState(false)
+  const { language, toggleLanguage } = useLanguage()
 
   return (
     <nav className="border-b border-[#00879E]/20 bg-white sticky top-0 z-50">
@@ -14,7 +16,6 @@ export default function Navbar() {
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center">
-              <div className="w-8 h-8 bg-[#00879E] rounded-full"></div>
               <span className="ml-2 text-xl font-semibold text-[#00879E]">Trillex</span>
             </Link>
           </div>
@@ -28,58 +29,12 @@ export default function Navbar() {
               About Us
             </Link>
 
-            {/* Services Dropdown */}
-            <div className="relative group">
-              <button
-                className="text-gray-600 group-hover:text-[#00879E] px-3 py-2 text-sm font-medium transition-colors flex items-center gap-1"
-                aria-expanded={isServicesOpen}
-              >
-                Services
-                <svg
-                  className="w-4 h-4 transform transition-transform duration-300 ease-in-out group-hover:rotate-180"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
-              </button>
-
-              {/* Dropdown Menu */}
-              <div className="absolute left-0 mt-0 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out transform translate-y-2 group-hover:translate-y-0">
-                <div className="py-2 mt-2 bg-white rounded-lg shadow-xl ring-1 ring-black ring-opacity-5">
-                  <Link
-                    href="/services/training"
-                    className="block px-4 py-3 text-sm text-gray-700 hover:text-[#00879E] hover:bg-gray-50 transition-colors"
-                  >
-                    Training
-                  </Link>
-                  <Link
-                    href="/services/iso"
-                    className="block px-4 py-3 text-sm text-gray-700 hover:text-[#00879E] hover:bg-gray-50 transition-colors"
-                  >
-                    ISO 9001
-                  </Link>
-                  <Link
-                    href="/services/strategic-consulting"
-                    className="block px-4 py-3 text-sm text-gray-700 hover:text-[#00879E] hover:bg-gray-50 transition-colors"
-                  >
-                    Strategic Consulting Services
-                  </Link>
-                  <Link
-                    href="/services/esg-consulting"
-                    className="block px-4 py-3 text-sm text-gray-700 hover:text-[#00879E] hover:bg-gray-50 transition-colors"
-                  >
-                    ESG Consulting Services
-                  </Link>
-                </div>
-              </div>
-            </div>
+            <Link 
+              href="/services"
+              className="text-gray-600 hover:text-[#00879E] px-3 py-2 text-sm font-medium transition-colors"
+            >
+              Services
+            </Link>
 
             <Link 
               href="/faq"
@@ -87,12 +42,28 @@ export default function Navbar() {
             >
               FAQ
             </Link>
+
             <Link 
-              href="/contact"
+              href="/news"
               className="text-gray-600 hover:text-[#00879E] px-3 py-2 text-sm font-medium transition-colors"
             >
-              Contact Us
+              News
             </Link>
+
+            <div className="flex items-center gap-4">
+              <Link
+                href="/contact"
+                className="px-4 py-2 text-sm font-medium text-gray-900 bg-white rounded-md hover:bg-gray-100 transition-colors"
+              >
+                Contact Us
+              </Link>
+              <button
+                onClick={toggleLanguage}
+                className="px-3 py-1.5 text-sm font-medium text-gray-900 bg-white rounded-md hover:bg-gray-100 transition-colors"
+              >
+                {language === 'en' ? 'MN' : 'EN'}
+              </button>
+            </div>
           </div>
 
           {/* Mobile menu button */}
@@ -124,7 +95,7 @@ export default function Navbar() {
       </div>
 
       {/* Mobile menu */}
-      <div 
+      <div
         className={`sm:hidden transition-all duration-200 ease-in-out ${
           isMobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
         } overflow-hidden`}
@@ -136,57 +107,12 @@ export default function Navbar() {
           >
             About Us
           </Link>
-          <div>
-            <button
-              onClick={() => setIsServicesOpen(!isServicesOpen)}
-              className="w-full text-left px-3 py-2 text-base font-medium text-gray-700 hover:text-[#00879E] hover:bg-gray-50 rounded-md flex items-center justify-between"
-            >
-              Services
-              <svg
-                className={`w-4 h-4 transition-transform duration-200 ${isServicesOpen ? 'rotate-180' : ''}`}
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M19 9l-7 7-7-7"
-                />
-              </svg>
-            </button>
-            <div 
-              className={`transition-all duration-200 ease-in-out ${
-                isServicesOpen ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0'
-              } overflow-hidden`}
-            >
-              <Link
-                href="/services/training"
-                className="block px-6 py-2 text-base font-medium text-gray-700 hover:text-[#00879E] hover:bg-gray-50"
-              >
-                Training
-              </Link>
-              <Link
-                href="/services/iso"
-                className="block px-6 py-2 text-base font-medium text-gray-700 hover:text-[#00879E] hover:bg-gray-50"
-              >
-                ISO 9001
-              </Link>
-              <Link
-                href="/services/strategic-consulting"
-                className="block px-6 py-2 text-base font-medium text-gray-700 hover:text-[#00879E] hover:bg-gray-50"
-              >
-                Strategic Consulting Services
-              </Link>
-              <Link
-                href="/services/esg-consulting"
-                className="block px-6 py-2 text-base font-medium text-gray-700 hover:text-[#00879E] hover:bg-gray-50"
-              >
-                ESG Consulting Services
-              </Link>
-            </div>
-          </div>
+          <Link
+            href="/services"
+            className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-[#00879E] hover:bg-gray-50 rounded-md"
+          >
+            Services
+          </Link>
           <Link
             href="/faq"
             className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-[#00879E] hover:bg-gray-50 rounded-md"
@@ -194,11 +120,25 @@ export default function Navbar() {
             FAQ
           </Link>
           <Link
-            href="/contact"
+            href="/news"
             className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-[#00879E] hover:bg-gray-50 rounded-md"
           >
-            Contact Us
+            News
           </Link>
+          <div className="flex items-center gap-4">
+            <Link
+              href="/contact"
+              className="px-4 py-2 text-sm font-medium text-gray-900 bg-white rounded-md hover:bg-gray-100 transition-colors"
+            >
+              Contact Us
+            </Link>
+            <button
+              onClick={toggleLanguage}
+              className="w-full justify-center px-4 py-2 rounded-lg border border-[#3C3F43] bg-[#282A2E] text-white flex items-center gap-2 transition-colors hover:bg-[#383A3E]"
+            >
+              {language === 'en' ? 'MN' : 'EN'}
+            </button>
+          </div>
         </div>
       </div>
     </nav>

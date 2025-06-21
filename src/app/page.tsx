@@ -1,328 +1,242 @@
 'use client'
 
-import Carousel from '@/components/Carousel'
-import { useState } from 'react'
-import { websiteContent } from '@/constants'
-import Image from 'next/image'
+import Link from "next/link";
+import { websiteContent } from "@/constants";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Home() {
-  const [activeSection, setActiveSection] = useState<'who' | 'what' | null>(null)
-  const { home } = websiteContent
+  const { home } = websiteContent;
+  const { language } = useLanguage();
 
   return (
     <main className="min-h-screen">
-      <Carousel />
-      
-      {/* Who is Trillex Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold text-[#00879E] mb-6">{home.hero.title}</h2>
-          
-          <div className="flex flex-col sm:flex-row justify-center gap-6 mb-12">
-            <button 
-              onClick={() => setActiveSection(activeSection === 'who' ? null : 'who')}
-              className={`inline-flex items-center justify-center px-8 py-3 text-base font-medium rounded-md transition-colors duration-300 ${
-                activeSection === 'who' 
-                  ? 'bg-[#00879E] text-white'
-                  : 'bg-white text-[#00879E] border-2 border-[#00879E]'
-              }`}
+      {/* Hero Section */}
+      <section className="bg-gradient-to-br from-[#00879E] to-[#006d7a] text-white py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-5xl font-bold mb-8">
+            {home.hero.title[language]}
+          </h1>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="/about"
+              className="bg-white text-[#00879E] px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
             >
-              {home.hero.buttons.whoAreWe}
-            </button>
-            <button 
-              onClick={() => setActiveSection(activeSection === 'what' ? null : 'what')}
-              className={`inline-flex items-center justify-center px-8 py-3 text-base font-medium rounded-md transition-colors duration-300 ${
-                activeSection === 'what'
-                  ? 'bg-[#00879E] text-white'
-                  : 'bg-white text-[#00879E] border-2 border-[#00879E]'
-              }`}
+              {home.hero.buttons.whoAreWe[language]}
+            </Link>
+            <Link
+              href="/services"
+              className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-[#00879E] transition-colors"
             >
-              {home.hero.buttons.whatWeDo}
-            </button>
-          </div>
-
-          {activeSection === 'what' && (
-            <div className="animate-fadeIn">
-              <div className="flex flex-col lg:flex-row gap-8 items-stretch">
-                <div className="lg:w-1/3">
-                  <div className="relative h-full min-h-[500px] w-full rounded-lg overflow-hidden border-4 border-[#00879E]/10">
-                    <Image
-                      src="/images/what-we-do.png"
-                      alt="What We Do"
-                      fill
-                      className="object-contain"
-                    />
-                  </div>
-                </div>
-                
-                <div className="lg:w-2/3 text-left space-y-6">
-                  <p className="text-gray-600">
-                    TRILLEX is a consulting company that provides services to Microfinance Institutions (MFIs) and Micro, Small, and Medium Enterprises (MSMEs). Our goal is to help these vital sectors overcome challenges, optimize their operations, and achieve sustainable growth by offering strategic solutions and innovative approaches. Additionally, we provide training and consulting services on ISO 9001 international quality management standards and Environmental, Social, and Governance (ESG) best practices, including Scope 1 integration.
-                  </p>
-                  
-                  <div>
-                    <h3 className="text-xl font-semibold text-[#00879E] mb-4">Our services cover the following areas:</h3>
-                    <div className="space-y-4">
-                      <div className="pl-6">
-                        <h4 className="text-[#00879E] font-medium mb-2">• Strategic Planning and Growth</h4>
-                        <p className="text-gray-600">
-                          Assisting target clients in sustainable expansion, broadening financial products and services, developing strategic and business plans, identifying growth opportunities, and scaling their operations.
-                        </p>
-                      </div>
-                      
-                      <div className="pl-6">
-                        <h4 className="text-[#00879E] font-medium mb-2">• Risk Management and Regulatory Compliance</h4>
-                        <p className="text-gray-600">
-                          Enhancing risk management frameworks and improving compliance with legal and regulatory requirements.
-                        </p>
-                      </div>
-                      
-                      <div className="pl-6">
-                        <h4 className="text-[#00879E] font-medium mb-2">• Operational Efficiency Enhancement</h4>
-                        <p className="text-gray-600">
-                          Improving business processes, integrating technology, expanding service offerings, reducing costs, and increasing profitability.
-                        </p>
-                      </div>
-                      
-                      <div className="pl-6">
-                        <h4 className="text-[#00879E] font-medium mb-2">• ISO 9001:2015 Implementation</h4>
-                        <p className="text-gray-600">
-                          Guidance on establishing, implementing, maintaining, and continuously improving an ISO 9001-compliant quality management system.
-                        </p>
-                      </div>
-                      
-                      <div className="pl-6">
-                        <h4 className="text-[#00879E] font-medium mb-2">• ESG Integration (Scope 1)</h4>
-                        <p className="text-gray-600">
-                          Implementing sustainable practices aligned with ESG principles, reducing direct environmental impacts, and providing training and consulting services.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <p className="text-gray-600 font-medium">
-                    TRILLEX is committed to supporting MFIs and MSMEs in optimizing their operations, overcoming challenges, and achieving sustainable long-term growth. We are ready to help unlock your potential and drive sustainable success.
-                  </p>
-                </div>
-              </div>
-            </div>
-          )}
-
-          {activeSection === 'who' && (
-            <div className="animate-fadeIn">
-              <div className="flex flex-col lg:flex-row gap-8 items-stretch">
-                <div className="lg:w-1/3">
-                  <div className="relative h-full min-h-[500px] w-full rounded-lg overflow-hidden border-4 border-[#00879E]/10">
-                    <Image
-                      src="/images/team/ceo.jpg"
-                      alt="CEO"
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                </div>
-                
-                <div className="lg:w-2/3 text-left space-y-6">
-                  <div className="mb-6">
-                    <h3 className="text-xl font-bold text-[#00879E]">Ts Otgontsetseg</h3>
-                    <p className="text-gray-600">Founder & CEO</p>
-                  </div>
-
-                  <div className="space-y-4">
-                    <p className="text-gray-600">
-                      Trillex LLC was established in 2020 and operates in several key areas, including management consulting, 
-                      project implementation, information technology and other computer services, and international trade.
-                    </p>
-                    <p className="text-gray-600">
-                      In all its activities, the company has integrated three of the 17 Sustainable Development Goals (SDGs) 
-                      into its long-term strategic planning:
-                    </p>
-                    <ul className="text-gray-600 list-disc pl-6 space-y-2">
-                      <li>Increasing financial inclusion (SDG 1)</li>
-                      <li>Promoting economic growth (SDG 8)</li>
-                      <li>Addressing climate change (SDG 13)</li>
-                    </ul>
-                    <p className="text-gray-600">
-                      By doing so, the company not only contributes to global and national goals but also strives to be a 
-                      trusted partner for clients who prioritize sustainability, helping them overcome challenges related to 
-                      climate change and positive social impact.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          )}
-        </div>
-      </section>
-
-      {/* Purpose Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-[#00879E] text-center mb-16">Our Purpose</h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* SDG 1 - No Poverty */}
-            <div className="flex flex-col items-center text-center">
-              <div className="relative h-48 w-48 mb-6">
-                <Image
-                  src="/images/no-poverty.png"
-                  alt="SDG 1 - No Poverty"
-                  fill
-                  className="object-contain"
-                />
-              </div>
-              <h3 className="text-xl font-bold text-[#00879E] mb-4">Financial Inclusion</h3>
-              <div className="space-y-4">
-                <p className="text-gray-600">
-                  Within the Framework of Eradicating Poverty in All Forms and Everywhere:
-                  For SDG 1, the focus is on eliminating all forms of poverty, including income inequality, 
-                  lack of access to resources, and social exclusion.
-                </p>
-                <p className="text-gray-600">
-                  Strengthening the transformative capacity of the microfinance sector as a powerful tool 
-                  for combating poverty: By empowering NBFIs (Non-Bank Financial Institutions) through 
-                  training and consulting services, we contribute to the sector's advancement and make a 
-                  meaningful impact on the country's economic development by promoting financial inclusion 
-                  and creating new opportunities.
-                </p>
-                <p className="text-gray-600">
-                  The company is dedicated to empowering NBFIs operating in rural areas and supporting 
-                  micro-entrepreneurs by providing free training, research, and business development 
-                  assistance. Additionally, we aim to enhance investment and collaboration opportunities, 
-                  improve policies and regulations, and ultimately increase their competitiveness in the market.
-                </p>
-              </div>
-            </div>
-
-            {/* SDG 8 - Decent Work */}
-            <div className="flex flex-col items-center text-center">
-              <div className="relative h-48 w-48 mb-6">
-                <Image
-                  src="/images/decent-work.png"
-                  alt="SDG 8 - Decent Work"
-                  fill
-                  className="object-contain"
-                />
-              </div>
-              <h3 className="text-xl font-bold text-[#00879E] mb-4">Economic Growth</h3>
-              <div className="space-y-4">
-                <p className="text-gray-600">
-                  Our goal is to help microfinance institutions develop innovative and sustainable business models 
-                  that connect them to economic growth and employment opportunities. By supporting micro-entrepreneurs, 
-                  we aim to create jobs and reduce income inequality.
-                </p>
-                <p className="text-gray-600">
-                  <span className="font-medium text-[#00879E]">Job Creation:</span> We focus on providing financial 
-                  support to microfinance institutions and small and medium-sized enterprises (SMEs), with a particular 
-                  emphasis on creating jobs for women, youth, and rural communities.
-                </p>
-                <p className="text-gray-600">
-                  <span className="font-medium text-[#00879E]">Business Development:</span> We offer training and 
-                  consulting services to micro-entrepreneurs to help them develop business management, financial literacy, 
-                  and marketing skills.
-                </p>
-                <p className="text-gray-600">
-                  <span className="font-medium text-[#00879E]">Sustainable Economic Growth:</span> By increasing 
-                  financial inclusion, we create growth and expansion opportunities for small businesses, ultimately 
-                  contributing to economic development.
-                </p>
-              </div>
-            </div>
-
-            {/* SDG 13 - Climate Action */}
-            <div className="flex flex-col items-center text-center">
-              <div className="relative h-48 w-48 mb-6">
-                <Image
-                  src="/images/climate-action.jpg"
-                  alt="SDG 13 - Climate Action"
-                  fill
-                  className="object-contain"
-                />
-              </div>
-              <h3 className="text-xl font-bold text-[#00879E] mb-4">Climate Action</h3>
-              <div className="space-y-4">
-                <p className="text-gray-600">
-                  <span className="font-medium text-[#00879E]">Sustainable Business Practices:</span> Integrating 
-                  Environmental Sustainability into Daily Operations
-                </p>
-                <p className="text-gray-600">
-                  <span className="font-medium text-[#00879E]">Policy Implementation:</span> We aim to reduce our 
-                  carbon footprint by adopting energy-efficient practices, minimizing paper waste, and promoting 
-                  digital solutions that lessen environmental impact.
-                </p>
-                <p className="text-gray-600">
-                  <span className="font-medium text-[#00879E]">Sustainable Business Operations:</span> We support 
-                  clients in transitioning to more sustainable business practices by providing consulting services 
-                  on environmental and social risk assessments and sustainability strategy development.
-                </p>
-                <p className="text-gray-600">
-                  <span className="font-medium text-[#00879E]">Green Finance:</span> We are committed to developing 
-                  and promoting financial products that support environmentally friendly businesses. This includes 
-                  consulting on renewable energy projects, eco-friendly agricultural practices, and green infrastructure 
-                  projects that contribute to climate change mitigation.
-                </p>
-              </div>
-            </div>
+              {home.hero.buttons.whatWeDo[language]}
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* ISO Section */}
-      <section className="py-20 bg-white">
+      {/* Company Introduction */}
+      <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row gap-12 items-center">
-            {/* ISO Image */}
-            <div className="lg:w-1/3">
-              <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
-                <Image
-                  src="/images/iso.png"
-                  alt="ISO Certification"
-                  fill
-                  className="object-contain"
-                />
-              </div>
-            </div>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-[#00879E] mb-6">
+              {home.companyIntro.title[language]}
+            </h2>
+            <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              {home.companyIntro.content[language]}
+            </p>
+          </div>
+        </div>
+      </section>
 
-            {/* Content */}
-            <div className="lg:w-2/3 space-y-6">
-              <h2 className="text-3xl font-bold text-[#00879E] leading-tight">
-                TRILLEX IS COMPLIANT WITH THE REQUIREMENTS OF THE MNS ISO 20700:2017 STANDARD FOR MANAGEMENT CONSULTING SERVICES
+      {/* SDG Focus Section */}
+      <section className="py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-[#00879E] mb-6">
+              {home.sdgFocus.title[language]}
+            </h2>
+            <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              {home.sdgFocus.content[language]}
+            </p>
+          </div>
+
+          {/* SDG Goals Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+            {home.sdgFocus.goals.map((goal, index) => (
+              <div key={index} className="bg-white rounded-lg shadow-lg p-8 text-center">
+                <img 
+                  src={`/images/${
+                    goal.number === 'SDG 1' ? 'no-poverty.png' :
+                    goal.number === 'SDG 8' ? 'decent-work.png' :
+                    'climate-action.jpg'
+                  }`}
+                  alt={goal.title[language]}
+                  className="mx-auto mb-6 h-24 object-contain"
+                />
+                <div className="text-4xl font-bold text-[#00879E] mb-4">
+                  {goal.number}
+                </div>
+                <h3 className="text-xl font-semibold text-gray-800 mb-3">
+                  {goal.title[language]}
+                </h3>
+                <p className="text-gray-600">
+                  {goal.description[language]}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Who Are We & What We Do */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {/* Who Are We */}
+            <div className="bg-white rounded-lg shadow-lg p-8">
+              <h2 className="text-2xl font-bold text-[#00879E] mb-6">
+                {home.whoAreWe.title[language]}
               </h2>
-              
-              <p className="text-gray-600">
-                Trillex provides consulting services with the highest level of professional ethics, adhering to principles of integrity, 
-                independence, and client satisfaction, while ensuring compliance with confidentiality standards, legal, and regulatory requirements.
+              <p className="text-gray-600 leading-relaxed">
+                {home.whoAreWe.content[language]}
               </p>
+              <Link
+                href="/about"
+                className="inline-block mt-6 bg-[#00879E] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#007a8a] transition-colors"
+              >
+                {language === 'en' ? 'Learn More' : 'Дэлгэрэнгүй'}
+              </Link>
+            </div>
 
-              <div className="space-y-4">
-                <p className="text-gray-600">
-                  When delivering consulting services that meet quality standards for management system improvement, we follow the ISO 9001: 
-                  Quality Management System framework, implementing the PDCA (Plan-Do-Check-Act) cycle in four stages:
-                </p>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
-                  <div className="bg-gray-50 p-6 rounded-lg">
-                    <h3 className="text-[#00879E] font-semibold mb-2">Plan</h3>
-                    <p className="text-gray-600">Develop strategies and set objectives.</p>
-                  </div>
-                  <div className="bg-gray-50 p-6 rounded-lg">
-                    <h3 className="text-[#00879E] font-semibold mb-2">Do</h3>
-                    <p className="text-gray-600">Implement the planned processes.</p>
-                  </div>
-                  <div className="bg-gray-50 p-6 rounded-lg">
-                    <h3 className="text-[#00879E] font-semibold mb-2">Check</h3>
-                    <p className="text-gray-600">Monitor and evaluate the outcomes.</p>
-                  </div>
-                  <div className="bg-gray-50 p-6 rounded-lg">
-                    <h3 className="text-[#00879E] font-semibold mb-2">Act</h3>
-                    <p className="text-gray-600">Improve and optimize based on findings.</p>
-                  </div>
-                </div>
-              </div>
+            {/* What We Do */}
+            <div className="bg-white rounded-lg shadow-lg p-8">
+              <h2 className="text-2xl font-bold text-[#00879E] mb-6">
+                {home.whatWeDo.title[language]}
+              </h2>
+              <p className="text-gray-600 leading-relaxed">
+                {home.whatWeDo.content[language]}
+              </p>
+              <Link
+                href="/services"
+                className="inline-block mt-6 bg-[#00879E] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#007a8a] transition-colors"
+              >
+                {language === 'en' ? 'Our Services' : 'Бидний үйлчилгээ'}
+              </Link>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Microfinance Section */}
+      <section className="py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-[#00879E] mb-6">
+              {home.microfinance.title[language]}
+            </h2>
+            <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              {home.microfinance.content[language]}
+            </p>
+          </div>
+          
+          <div className="text-center">
+            <Link
+              href="/faq"
+              className="inline-block bg-[#00879E] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#007a8a] transition-colors text-lg"
+            >
+              {language === 'en' ? 'Learn More About Microfinance' : 'Бичил санхүүгийн талаар дэлгэрэнгүй'}
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Partners/Sponsors Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-[#00879E] mb-6">
+              {language === 'en' ? 'Our Partners & Sponsors' : 'Бидний түншүүд & Ивээн тэтгэгчид'}
+            </h2>
+            <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              {language === 'en' 
+                ? 'We are proud to work with leading organizations and institutions that share our vision for sustainable development and financial inclusion.'
+                : 'Тогтвортой хөгжил, санхүүгийн хүртээмжийн талаарх бидний алсын харааг хуваалцдаг тэргүүлэгч байгууллагууд, байгууллагтай хамтран ажиллахад бид горьдог.'
+              }
+            </p>
+          </div>
+
+          {/* Partners Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 items-center">
+            {/* PPG */}
+            <div className="bg-white rounded-lg shadow-md p-6 flex items-center justify-center h-32 hover:shadow-lg transition-shadow">
+              <img 
+                src="/images/partners/ppg.jpg" 
+                alt="PPG" 
+                className="max-w-full max-h-full object-contain"
+              />
+            </div>
+
+            {/* MMCI */}
+            <div className="bg-white rounded-lg shadow-md p-6 flex items-center justify-center h-32 hover:shadow-lg transition-shadow">
+              <img 
+                src="/images/partners/mmci.JPG" 
+                alt="MMCI" 
+                className="max-w-full max-h-full object-contain"
+              />
+            </div>
+
+            {/* ICMI */}
+            <div className="bg-white rounded-lg shadow-md p-6 flex items-center justify-center h-32 hover:shadow-lg transition-shadow">
+              <img 
+                src="/images/partners/icmi.jpg" 
+                alt="ICMI" 
+                className="max-w-full max-h-full object-contain"
+              />
+            </div>
+
+            {/* Transfin */}
+            <div className="bg-white rounded-lg shadow-md p-6 flex items-center justify-center h-32 hover:shadow-lg transition-shadow">
+              <img 
+                src="/images/partners/transfin.jpg" 
+                alt="Transfin" 
+                className="max-w-full max-h-full object-contain"
+              />
+            </div>
+
+            {/* OSHMI */}
+            <div className="bg-white rounded-lg shadow-md p-6 flex items-center justify-center h-32 hover:shadow-lg transition-shadow">
+              <img 
+                src="/images/partners/oshmi.jpg" 
+                alt="OSHMI" 
+                className="max-w-full max-h-full object-contain"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Call to Action */}
+      <section className="py-16 bg-[#00879E] text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl font-bold mb-6">
+            {language === 'en' 
+              ? 'Ready to Transform Your Organization?'
+              : 'Таны байгууллагыг өөрчлөхөд бэлэн үү?'
+            }
+          </h2>
+          <p className="text-xl mb-8 max-w-2xl mx-auto">
+            {language === 'en'
+              ? 'Let us help you achieve sustainable growth and development through our expert consulting services.'
+              : 'Бидний мэргэжлийн зөвлөх үйлчилгээгээр тогтвортой хөгжил, дэвшилд хүрэхэд тусалъя.'
+            }
+          </p>
+          <Link
+            href="/contact"
+            className="bg-white text-[#00879E] px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors text-lg"
+          >
+            {language === 'en' ? 'Get Started Today' : 'Өнөөдөр эхлэх'}
+          </Link>
         </div>
       </section>
     </main>
-  )
+  );
 }
