@@ -576,9 +576,9 @@ export const websiteContent = {
       email: "info@trillex.mn"
     },
     social: {
-      facebook: "https://facebook.com",
-      linkedin: "https://linkedin.com",
-      instagram: "https://instagram.com"
+      facebook: "https://www.facebook.com/TrillexMFIconsulting/",
+      linkedin: "https://www.linkedin.com/in/otgontsetseg-tseveg-874777309",
+      instagram: "https://www.instagram.com/trillexmfi"
     }
   },
   news: {
@@ -587,6 +587,22 @@ export const websiteContent = {
       mn: 'Сүүлийн үеийн мэдээ, мэдээлэл'
     },
     articles: [
+      {
+        date: "2024-10-02",
+        image: "/images/mou_oshmi.jpg",
+        content: {
+          mn: "“Триллекс” ХХК болон “Ошми Консалтинг” ХХК хамтын ажиллагааны санамж бичиг байгууллаа.",
+          en: "Trillex LLC and Oshmi Consulting LLC signed a memorandum of understanding."
+        }
+      },
+      {
+        date: "2024-10-01",
+        image: "/images/mou.jpg",
+        content: {
+          mn: "ТрансФинТек (TransFinTech) болон Монголын зөвлөх фирм Триллекс ХХК (Trillex LLC) хамтран Харилцан Ойлголцлын Санамж Бичиг (MoU) зурлаа.",
+          en: "Trans FinTech and Mongolian consulting firm Trillex LLC signed MoU jointly."
+        }
+      },
       {
         date: '22nd Jan 2025',
         content: {
@@ -617,8 +633,8 @@ Turning Hope into an Opportunity`,
         content: {
           en: `We are pleased to announce the signing of a Memorandum of Understanding (MoU) between Trilex LLC and OSHMI Consulting LLC.
 OSHMI Group was established in 2010 and is a leading organization in Mongolia for training and certification in Occupational Health and Safety (OHS) and International Management System Standards (ISO). As a key member of the Mongolian Management Consulting Institute (MMCI), OSHMI operates with a strong commitment to social responsibility, aiming to develop sustainable businesses and highly skilled professionals with competitive capabilities on a global scale.
-📌 Through this partnership, we aim to contribute to the long-term sustainable development of non-bank financial institutions by effectively implementing the ISO 9001 standard. Additionally, we will provide ESG (Environmental, Social, and Governance) advisory services to help enhance their operational quality and effectiveness. This collaboration is dedicated to fostering sustainable growth, business excellence, and aligning enterprises with global standards for continued prosperity.
-📌 We invite you to join us in this journey toward a brighter future, where we grow and succeed together.
+- Through this partnership, we aim to contribute to the long-term sustainable development of non-bank financial institutions by effectively implementing the ISO 9001 standard. Additionally, we will provide ESG (Environmental, Social, and Governance) advisory services to help enhance their operational quality and effectiveness. This collaboration is dedicated to fostering sustainable growth, business excellence, and aligning enterprises with global standards for continued prosperity.
+- We invite you to join us in this journey toward a brighter future, where we grow and succeed together.
 Turning Hope Into Opportunity`,
           mn: `“Триллекс” ХХК болон “ОШМИ консалтинг” ХХК хамтын ажиллагааны санамж бичиг байгуулсныг дуулгахад таатай байна.
 "ОШМИ" Групп OSHMI нь 2010 онд үүсгэн байгуулагдсан бөгөөд Монгол дахь Хөдөлмөрийн эрүүл мэнд, аюулгүй байдал (ХЭМАБ) ба Менежментийн тогтолцооны Олон улсын стандартын (ISO) сургалт, баталгаажуулалтын тэргүүлэх байгууллага юм. ОШМИ нь нийгмийн өндөр хариуцлагатай, олон улсад өрсөлдөх чадавхи бүхий тогтвортой бизнес, ур чадвар бүхий мэргэжилтэнүүдийг бэлтгэх зорилготойгоор ажилладаг ММЗИ-н тэргүүлэх гишүүн байгууллага юм.

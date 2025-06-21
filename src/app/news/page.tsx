@@ -56,6 +56,11 @@ const NewsPage = () => {
                 <div className={`ml-12 md:ml-0 ${index % 2 === 0 ? 'md:col-start-1' : 'md:col-start-2'}`}>
                   <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
                     <p className="text-sm font-semibold text-[#00879E] mb-3">{article.date}</p>
+                    {article.image && (
+                      <div className="mb-4">
+                        <img src={article.image} alt={article.content[language].substring(0, 50)} className="rounded-lg w-full h-auto" />
+                      </div>
+                    )}
                     <div className="text-gray-700 leading-relaxed space-y-2">
                       {parseContent(article.content[language])}
                     </div>
