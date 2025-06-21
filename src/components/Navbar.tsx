@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { useState } from 'react'
 import { useLanguage } from '@/contexts/LanguageContext'
+import { websiteContent } from '@/constants'
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -26,28 +27,28 @@ export default function Navbar() {
               href="/about"
               className="text-gray-600 hover:text-[#00879E] px-3 py-2 text-sm font-medium transition-colors"
             >
-              About Us
+              {websiteContent.navbar.aboutUs[language]}
             </Link>
 
             <Link 
               href="/services"
               className="text-gray-600 hover:text-[#00879E] px-3 py-2 text-sm font-medium transition-colors"
             >
-              Services
+              {websiteContent.navbar.services[language]}
             </Link>
 
             <Link 
               href="/faq"
               className="text-gray-600 hover:text-[#00879E] px-3 py-2 text-sm font-medium transition-colors"
             >
-              FAQ
+              {websiteContent.navbar.faq[language]}
             </Link>
 
             <Link 
               href="/news"
               className="text-gray-600 hover:text-[#00879E] px-3 py-2 text-sm font-medium transition-colors"
             >
-              News
+              {websiteContent.navbar.news[language]}
             </Link>
 
             <div className="flex items-center gap-4">
@@ -55,7 +56,7 @@ export default function Navbar() {
                 href="/contact"
                 className="px-4 py-2 text-sm font-medium text-gray-900 bg-white rounded-md hover:bg-gray-100 transition-colors"
               >
-                Contact Us
+                {websiteContent.navbar.contactUs[language]}
               </Link>
               <button
                 onClick={toggleLanguage}
@@ -105,32 +106,32 @@ export default function Navbar() {
             href="/about"
             className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-[#00879E] hover:bg-gray-50 rounded-md"
           >
-            About Us
+            {websiteContent.navbar.aboutUs[language]}
           </Link>
           <Link
             href="/services"
             className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-[#00879E] hover:bg-gray-50 rounded-md"
           >
-            Services
+            {websiteContent.navbar.services[language]}
           </Link>
           <Link
             href="/faq"
             className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-[#00879E] hover:bg-gray-50 rounded-md"
           >
-            FAQ
+            {websiteContent.navbar.faq[language]}
           </Link>
           <Link
             href="/news"
             className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-[#00879E] hover:bg-gray-50 rounded-md"
           >
-            News
+            {websiteContent.navbar.news[language]}
           </Link>
           <div className="flex items-center gap-4">
             <Link
               href="/contact"
               className="px-4 py-2 text-sm font-medium text-gray-900 bg-white rounded-md hover:bg-gray-100 transition-colors"
             >
-              Contact Us
+              {websiteContent.navbar.contactUs[language]}
             </Link>
             <button
               onClick={toggleLanguage}

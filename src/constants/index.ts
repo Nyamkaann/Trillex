@@ -1,4 +1,26 @@
 export const websiteContent = {
+  navbar: {
+    aboutUs: {
+      en: "About Us",
+      mn: "Бидний тухай"
+    },
+    services: {
+      en: "Services",
+      mn: "Үйлчилгээ"
+    },
+    faq: {
+      en: "FAQ",
+      mn: "Түгээмэл асуултууд"
+    },
+    news: {
+      en: "News",
+      mn: "Мэдээ"
+    },
+    contactUs: {
+      en: "Contact Us",
+      mn: "Холбоо барих"
+    }
+  },
   home: {
     hero: {
       title: {
