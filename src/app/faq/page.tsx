@@ -100,7 +100,7 @@ export default function FAQ() {
             }
           </p>
           <a
-            href="mailto:info@trillex.mn"
+            href="mailto:info@trillexpartners.com"
             className="inline-flex items-center px-6 py-3 bg-[#00879E] text-white font-medium rounded-lg hover:bg-[#007a8a] transition-colors duration-200"
           >
             {language === 'en' ? "Contact Us" : "Бидэнтэй холбогдох"}

@@ -17,7 +17,7 @@ export default function Navbar() {
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center">
-              <span className="ml-2 text-xl font-semibold text-[#00879E]">Trillex</span>
+              <span className="ml-2 text-xl font-semibold text-[#00879E]">{language === 'mn' ? 'Триллекс' : 'Trillex'}</span>
             </Link>
           </div>
 
@@ -35,6 +35,13 @@ export default function Navbar() {
               className="text-gray-600 hover:text-[#00879E] px-3 py-2 text-sm font-medium transition-colors"
             >
               {websiteContent.navbar.services[language]}
+            </Link>
+
+            <Link 
+              href="/services/training"
+              className="text-gray-600 hover:text-[#00879E] px-3 py-2 text-sm font-medium transition-colors"
+            >
+              {websiteContent.navbar.training[language]}
             </Link>
 
             <Link 
@@ -113,6 +120,12 @@ export default function Navbar() {
             className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-[#00879E] hover:bg-gray-50 rounded-md"
           >
             {websiteContent.navbar.services[language]}
+          </Link>
+          <Link
+            href="/services/training"
+            className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-[#00879E] hover:bg-gray-50 rounded-md"
+          >
+            {websiteContent.navbar.training[language]}
           </Link>
           <Link
             href="/faq"

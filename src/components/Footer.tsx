@@ -1,51 +1,46 @@
+"use client";
 import Link from 'next/link'
+import { useLanguage } from '@/contexts/LanguageContext'
+import { websiteContent } from '@/constants'
 
 export default function Footer() {
+  const { language } = useLanguage();
+  const footer = websiteContent.footer;
   return (
     <footer className="bg-[#00879E] text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold">Trillex LLC</h3>
-            <p className="text-sm text-gray-300">
-              Management consulting services for sustainable growth and development
-            </p>
+            <h3 className="text-lg font-semibold">{footer.company[language]}</h3>
+            <p className="text-sm text-gray-300">{footer.slogan[language]}</p>
           </div>
 
           {/* Quick Links */}
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold">Quick Links</h3>
+            <h3 className="text-lg font-semibold">{footer.quickLinksTitle[language]}</h3>
             <ul className="space-y-2">
-              <li>
-                <Link href="/#about" className="text-sm text-gray-300 hover:text-white transition-colors">
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link href="/#services" className="text-sm text-gray-300 hover:text-white transition-colors">
-                  Our Services
-                </Link>
-              </li>
-              <li>
-                <Link href="/#purpose" className="text-sm text-gray-300 hover:text-white transition-colors">
-                  Our Purpose
-                </Link>
-              </li>
+              {footer.quickLinks.map((link, i) => (
+                <li key={i}>
+                  <Link href={link.href} className="text-sm text-gray-300 hover:text-white transition-colors">
+                    {link[language]}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* Contact Info */}
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold">Contact Us</h3>
+            <h3 className="text-lg font-semibold">{footer.contactTitle[language]}</h3>
             <div className="text-sm text-gray-300 space-y-2">
-              <p>Email: info@trillex.mn</p>
+              <p>Email: info@trillexpartners.com</p>
             </div>
           </div>
 
           {/* Social Links */}
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold">Follow Us</h3>
+            <h3 className="text-lg font-semibold">{footer.socialTitle[language]}</h3>
             <div className="flex space-x-6">
               <a
                 href="https://facebook.com"
@@ -98,7 +93,7 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-white/10 text-center text-sm text-gray-300">
-          <p>© {new Date().getFullYear()} Trillex LLC. All rights reserved.</p>
+          <p>{footer.copyright[language]}</p>
         </div>
       </div>
     </footer>

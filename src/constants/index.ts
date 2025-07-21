@@ -5,8 +5,8 @@ export const websiteContent = {
       mn: "Бидний тухай"
     },
     services: {
-      en: "Services",
-      mn: "Үйлчилгээ"
+      en: "Products & Services",
+      mn: "Бүтээгдэхүүн Үйлчилгээ"
     },
     faq: {
       en: "FAQ",
@@ -19,6 +19,10 @@ export const websiteContent = {
     contactUs: {
       en: "Contact Us",
       mn: "Холбоо барих"
+    },
+    training: {
+      en: "Training",
+      mn: "Сургалт"
     }
   },
   home: {
@@ -126,17 +130,18 @@ export const websiteContent = {
   },
   services: {
     title: {
-        mn: 'Үйлчилгээ',
-        en: 'Services'
+        mn: 'Бүтээгдэхүүн Үйлчилгээ',
+        en: 'Products & Services'
     },
     introduction: {
         mn: [
-            "Дэлхийн хэмжээнд 64,200 гаруй олон улсын зөвлөхүүдийн гишүүнчлэлтэй ICMCI болон MMCI-ийн гишүүн байгууллага болох Триллекс ХХК  нь 2020 онд байгуулагдсан ба 2025 онд Монгол, БНХАУ, Австрали зэрэг орны зөвлөх компани болон зөвлөхүүдтэй хамтын ажиллагааг эхлүүлээд байна.",
-            "Триллекс нь салбарын туршлага, чанар, инноваци, хариуцлагатай бизнесийн практикт суурилан тууштай, тогтвортой  үйл ажиллагаа явуулж өөрийн зорилтот харилцагч болох БСБ болон БЖД бизнесүүдэд дараах бүтээгдэхүүн үйлчилгээг санал болгон та бүхний өсөлт хөгжил, урт хугацааны амжилтыг дэмжих тусгайлсан  төсөл  хөтөлбөрүүд эхлүүлээд байна.",
+            "Монголын Менежментийн Зөвлөхүүдийн Институт (ММЗИ)-ийн гишүүн байгууллага болох Триллекс ХХК нь 2020 онд байгуулагдсан ба 2025 онд Монгол, БНХАУ, Австрали зэрэг орны зөвлөх компани болон зөвлөхүүдтэй хамтын ажиллагааг эхлүүлээд байна.",
+            "Манай зөвлөх баг нь CMC-Global / ICMCI-ээс мэргэжлийн сургалтад хамрагдсан бөгөөд гэрээт Мэргэшсэн Менежментийн Зөвлөхтэй (CMC) хамтран ажилладаг. Үүний үр дүнд манай төслийн хүрээ, арга зүй нь олон улсад хүлээн зөвшөөрөгдсөн стандартад бүрэн нийцэж, дэлхийн шилдэг туршлагыг практикт шууд хэрэгжүүлэх боломжийг баталгаажуулж байна. Бид өмнөх түнш байгууллага болон бусад ББСБ-уудтай холбоотой ашиг сонирхлын зөрчилгүй, хараат бус, ил тод байдлыг бүрэн хангадаг.",
             "Манай төсөл хөтөлбөрүүд нь олон улсын стандарт, арга зүйд бүрэн нийцсэн байх ба дэлхийн стандартууд нь нийтээр хэрэгжих боломжтой бөгөөд өмнө ажиллаж байсан байгууллага болон бусад ББСБ-уудтай ашиг сонирхлын зөрчил байхгүй дээр бидний арга барил нь зөвхөн тухайн байгууллагын үйл явц, гүйцэтгэл, тогтвортой байдлыг сайжруулахад чиглэдэг ба зөвлөх үйлчилгээний ёс зүйн зарчимыg хатуу мөрдөн ISO27001:2022 мэдээллийн аюулгүй байдлын удирдлагын стандартад нийцүүлэн үйл ажиллагаа явуулдаг мэргэжлийн баг хамт олон гэдгийг танд албан ёсоор мэдэгдэх нь таатай байна."
         ],
         en: [
-            "Trillex LLC, a member organization of ICMCI and MMCI with over 64,200 international consultants globally, was founded in 2020. By 2025, the company has commenced collaborations with consulting firms and consultants in countries such as Mongolia, China, and Australia.",
+            "Trillex LLC, a member organization of Mongolian Management Consultants' Institution (MMCI), was founded in 2020",
+            "Our consulting team has received professional training from CMC-Global / ICMCI and collaborates with a contracted Certified Management Consultant (CMC). As a result, our project frameworks and methodologies are fully aligned with internationally recognized standards, ensuring the practical application of global best practices. We maintain full independence and transparency, with no conflicts of interest involving previous partner organizations or other NBFIs.",
             "Trillex operates with a foundation rooted in industry experience, quality, innovation, and responsible business practices. The company offers a range of products and services to its target clients, including NBFIs and MSMEs, and has launched specialized projects and programs designed to support your growth, development, and long-term success.",
             "Our project programs fully comply with international standards and methodologies, ensuring that global best practices are applicable and achievable. There are no conflicts of interest with previous partner organizations or other NBFIs. Our approach is solely focused on improving the processes, performance, and sustainability of the client organization. We strictly adhere to ethical principles in consultancy and align with international standards such as ISO 27001:2022 for information security management. We are pleased to formally introduce our professional team, which operates with the highest level of expertise and integrity."
         ]
@@ -211,7 +216,7 @@ export const websiteContent = {
                 mn: 'БНХАУ-н БОНЗ-н тэргүүлэгч финтек компани /Beijing Trans FinTech Ltd/, Триллекс ХХК зөвлөх хамтарсан баг',
                 en: 'Project Team: A joint team of a leading Chinese ESG FinTech company (Beijing Trans FinTech Ltd) and Trillex LLC consultants.'
             }
-        }
+      }
     ]
   },
   about: {
@@ -226,8 +231,8 @@ export const websiteContent = {
           mn: "ТРИЛЛЕКС ХХК Үүсгэн байгуулагч ба Гүйцэтгэх захирал"
         },
         content: {
-          en: "Otgontsetseg Tseveg, who served for a decade as Chief Credit Officer of Transcapital NBFI, was appointed Deputy CEO and COO at the start of 2023. Prior to her role at Transcapital, she held several management positions at VisionFund International-Mongolia, including Accountant, Credit Quality Assurance Coordinator, Internal Control Manager, and Internal Audit Manager. With over 18 years of experience in the microfinance sector, she brings a wealth of expertise to those organizations. Her experience in the microfinance sector includes working with NBFIs (Non-Bank Financial Institutions) that have the largest network of branches covering both urban and rural areas. These institutions are known for supporting micro and small businesses and collaborate with numerous international investors, including EBRD and IFC. Recognized internationally, these NBFIs have gained a strong reputation in the industry. She is well-known in the sector for successfully leading and managing lending operations during the first decade of rapid growth of Transcapital NBFI. These experiences have provided her with a deep understanding of the challenges and opportunities within the microfinance sector, ultimately leading to the founding of her own consulting firm, Trillex LLC. The company's mission is to empower targeted clients at various stages of development through specialized management consulting based on international best practices, effective project implementation, and advanced information technology solutions, fostering growth together.",
-          mn: "ОТГОНЦЭЦЭГ ЦЭВЭГ, Бичил санхүүгийн салбарт 20 жил ажилласан туршлагатай бөгөөд сүүлийн 12 жилд нь Транскапитал ББСБ-н Зээлийн хэлтсийн захирал, Гүйцэтгэх Захирлын орлогч бөгөөд Үйл ажиллагаа хариуцсан захирлаар томилогдон ажиллаж байсан. Транскапиталд ажиллахын өмнө тэрээр ВишнФанд Монгол Олон Улсын байгууллагад Санхүү, Зээл Эрсдэлийн Удирдлагын Зохицуулагч, Дотоод Хяналтын Менежер, Дотоод Аудит Захирал зэрэг удирдлагын түвшиний ажил үүрэг гүйцэтгэж байсан арвин мэдлэг туршлага, мэргэжлийн ур чадвартай, салбартаа үнэ цэнэ бүхий мэргэшсэн удирдах ажилтан юм. Түүний бичил санхүүгийн салбарт ажиллаж байсан ББСБ-ууд нь салбартаа хот, орон нутгийн хамарсан хамгийн олон салбартай, бичил жижиг бизнесийг дэмжигч, EBRD, IFC зэрэг олон арван хөрөнгө оруулагч олон улсын байгууллагуудтай хамтран ажилладаг, ОУ-д хүлээн зөвшөөрөгдсөн ББСБ-ууд байсан ба Транскапитал ББСБ-н үсрэнгүй хөгжлийн эхний 10 жилд зээлийн үйл ажиллагааг удирдан зохион байгуулж амжилттай ажилласан туршлагатай нэгэн гэдгээрээ салбартаа танигдсан. Эдгээр туршлага нь түүнд бичил санхүүгийн салбарт тулгарч буй сорилтуудын талаар гүн гүнзгий ойлголттой болгож, эцэст нь өөрийн зөвлөх компани болох Триллекс ХХК-ийг үүсгэн байгуулахад хүргэсэн. Компаний эрхэм зорилго нь олон улсын сайн туршлагад тулгуурлсан менежментийн мэргэшсэн зөвлөгөө, төслийн үр дүнтэй хэрэгжилт, мэдээллийн технологийн дэвшилтэт шийдлүүдийг санал болгох замаар хөгжлийн бүхий л шатанд зорилтот харилцагчаа чадавхжуулах, хамтдаа хөгжих явдал юм."
+          en: "Otgontsetseg Tseveg, who served for a decade as Chief Credit Officer of Transcapital NBFI, was appointed Deputy CEO and COO at the start of 2023. Prior to her role at Transcapital, she held several management positions at VisionFund International-Mongolia, including Accountant, Credit Quality Assurance Coordinator, Internal Control Manager, and Internal Audit Manager. With over 20 years of experience in the microfinance sector, she brings a wealth of expertise to those organizations. Her experience in the microfinance sector includes working with NBFIs (Non-Bank Financial Institutions) that have the largest network of branches covering both urban and rural areas. These institutions are known for supporting micro and small businesses and collaborate with numerous international investors, including EBRD and IFC. Recognized internationally, these NBFIs have gained a strong reputation in the industry. She is well-known in the sector for successfully leading and managing lending operations during the first decade of rapid growth of Transcapital NBFI. These experiences have provided her with a deep understanding of the challenges and opportunities within the microfinance sector, ultimately leading to the founding of her own consulting firm, Тrillex-Microfinance Consulting Hub (MFCH). The company's mission is to empower targeted clients at various stages of development through specialized management consulting based on international best practices, effective project implementation, and advanced information technology solutions, fostering growth together.",
+          mn: "ОТГОНЦЭЦЭГ ЦЭВЭГ, Бичил санхүүгийн салбарт 20 жил ажилласан туршлагатай бөгөөд сүүлийн 12 жилд нь Транскапитал ББСБ-н Зээлийн хэлтсийн захирал, Гүйцэтгэх Захирлын орлогч бөгөөд Үйл ажиллагаа хариуцсан захирлаар томилогдон ажиллаж байсан. Транскапиталд ажиллахын өмнө тэрээр ВишнФанд Монгол Олон Улсын байгууллагад Санхүү, Зээл Эрсдэлийн Удирдлагын Зохицуулагч, Дотоод Хяналтын Менежер, Дотоод Аудит Захирал зэрэг удирдлагын түвшиний ажил үүрэг гүйцэтгэж байсан арвин мэдлэг туршлага, мэргэжлийн ур чадвартай, салбартаа үнэ цэнэ бүхий мэргэшсэн удирдах ажилтан юм. Түүний бичил санхүүгийн салбарт ажиллаж байсан ББСБ-ууд нь салбартаа хот, орон нутгийн хамарсан хамгийн олон салбартай, бичил жижиг бизнесийг дэмжигч, EBRD, IFC зэрэг олон арван хөрөнгө оруулагч олон улсын байгууллагуудтай хамтран ажилладаг, ОУ-д хүлээн зөвшөөрөгдсөн ББСБ-ууд байсан ба Транскапитал ББСБ-н үсрэнгүй хөгжлийн эхний 10 жилд зээлийн үйл ажиллагааг удирдан зохион байгуулж амжилттай ажилласан туршлагатай нэгэн гэдгээрээ салбартаа танигдсан. Эдгээр туршлага нь түүнд бичил санхүүгийн салбарт тулгарч буй сорилтуудын талаар гүн гүнзгий ойлголттой болгож, эцэст нь өөрийн зөвлөх компани болох Триллекс – Бичил Санхүүгийн Зөвлөх Төв (БСЗТ)-ийг үүсгэн байгууллахад хүргэсэн. Компаний эрхэм зорилго нь олон улсын сайн туршлагад тулгуурлсан менежментийн мэргэшсэн зөвлөгөө, төслийн үр дүнтэй хэрэгжилт, мэдээллийн технологийн дэвшилтэт шийдлүүдийг санал болгох замаар хөгжлийн бүхий л шатанд зорилтот харилцагчаа чадавхжуулах, хамтдаа хөгжих явдал юм."
         }
       },
       vision: {
@@ -305,8 +310,8 @@ export const websiteContent = {
     },
     team: {
       title: {
-        en: "OUR TEAM",
-        mn: "БИДНИЙ БАГ"
+        en: "Management team",
+        mn: "Удирдлагын баг"
       },
       members: [
         {
@@ -344,14 +349,14 @@ export const websiteContent = {
           image: "/images/team/operations.jpg",
           education: {
             en: [
-              "• Master of Science in Public Health, University of Debrecen, Debrecen, Hungary (2021 - 2023)",
-              "• Master of Health Management, CHS Health College, Sydney, Australia (Dec 2024 - to date)",
-              "• Bachelor of Science in Medical, Ach Medical University, Ulaanbaatar, Mongolia (2014 - 2020)"
+              "• Master of Health Management, CHS Health College, Sydney, Australia (2024 - to date)",
+              "• Master of Public Health, University of Debrecen, Debrecen, Hungary (2021 - 2023)",
+              "• Bachelor of Science in Medical, \"Ach\" Medical University, Ulaanbaatar, Mongolia (2014 - 2020)"
             ],
             mn: [
-              "• Магистр, Нийгмийн эрүүл мэнд, Унгар улс, Дебрецен Их сургууль (2021 – 2023)",
               "• Магистр, Эрүүл мэндийн удирдлага, Сидней CHS Health college (2024 - одоо)",
-              "• Бакалавр, Эмч, Монгол, \"Ач\" Анагаах Ухааны Их Сургууль (2020 – 2025 одоо)"
+              "• Магистр, Нийгмийн Анагаах Ухаан, Дебрецений Их сургууль, Унгар улс (2021 – 2023)",
+              "• Бакалавр, Хүний Их Эмч, Ач Анагаах Ухааны Их Сургууль, Улаанбаатар, Монгол Улс (2014 – 2020)"
             ]
           }
         },
@@ -573,7 +578,7 @@ export const websiteContent = {
     name: "Trillex",
     description: "Management consulting services for sustainable growth and development",
     contact: {
-      email: "info@trillex.mn"
+      email: "info@trillexpartners.com"
     },
     social: {
       facebook: "https://www.facebook.com/TrillexMFIconsulting/",
@@ -689,5 +694,36 @@ We're excited to drive impactful change alongside you and contribute to a greene
         }
       }
     ]
+  },
+  footer: {
+    company: {
+      en: "Trillex LLC",
+      mn: "Триллекс ХХК"
+    },
+    slogan: {
+      en: "Management consulting services for sustainable growth and development",
+      mn: "Тогтвортой өсөлт, хөгжлийн менежментийн зөвлөх үйлчилгээ"
+    },
+    quickLinksTitle: {
+      en: "Quick Links",
+      mn: "Түргэн холбоосууд"
+    },
+    quickLinks: [
+      { en: "About Us", mn: "Бидний тухай", href: "/#about" },
+      { en: "Our Services", mn: "Манай үйлчилгээ", href: "/#services" },
+      { en: "Our Purpose", mn: "Манай зорилго", href: "/#purpose" }
+    ],
+    contactTitle: {
+      en: "Contact Us",
+      mn: "Холбоо барих"
+    },
+    socialTitle: {
+      en: "Follow Us",
+      mn: "Биднийг дагаарай"
+    },
+    copyright: {
+      en: "© 2024 Trillex LLC. All rights reserved.",
+      mn: "© 2024 Триллекс ХХК. Бүх эрх хуулиар хамгаалагдсан."
+    }
   }
 }; 

@@ -67,7 +67,7 @@ export default function Contact() {
                   <h3 className="font-semibold text-gray-900">
                     {language === 'en' ? 'Email' : 'И-мэйл'}
                   </h3>
-                  <p className="text-gray-600">info@trillex.mn</p>
+                  <p className="text-gray-600">info@trillexpartners.com</p>
                 </div>
               </div>
 
