@@ -215,35 +215,60 @@ export default function ServicesPage() {
           <p className="text-lg text-gray-700 mb-8">{langContent.intro}</p>
 
           {/* --- New context section start --- */}
-          <div className="mb-8">
-            <div className="bg-gradient-to-r from-[#F0F7FA] to-[#e6f3f7] rounded-2xl p-4 shadow flex flex-col items-center">
-              <h2 className="text-2xl font-bold text-[#00879E] mb-2 text-center flex items-center gap-2">
+          <div className="bg-white rounded-2xl shadow-lg p-8 flex flex-col gap-8">
+            {/* Main heading and intro */}
+            <div className="text-center">
+              <h2 className={`text-3xl ${language === 'mn' ? 'font-bold font-sans' : 'font-extrabold'} text-[#00879E] mb-2`} style={language === 'mn' ? { fontFamily: 'Arial, sans-serif' } : {}}>
                 {extraSection[language].heading}
               </h2>
               {extraSection[language].paragraphs.map((p, i) => (
-                <p key={i} className="mb-3 text-gray-700 text-base text-center max-w-2xl">{p}</p>
+                <p
+                  key={i}
+                  className={`mb-6 text-gray-600 text-lg max-w-2xl mx-auto ${language === 'mn' ? 'font-normal font-sans' : ''}`}
+                  style={language === 'mn' ? { fontFamily: 'Arial, sans-serif' } : {}}
+                >
+                  {p}
+                </p>
               ))}
-              <div className="w-full max-w-3xl mt-2 space-y-6">
-                {extraSection[language].sections.map((sec, idx) => (
+            </div>
+            {/* Subsections */}
+            <div className="w-full max-w-3xl mx-auto flex flex-col gap-8">
+              {extraSection[language].sections.map((sec, idx) => {
+                return (
                   <div key={idx} className="">
-                    <h3 className="text-lg font-bold text-[#00879E] mb-2 flex items-center gap-2">
-                      {sec.icon}
-                      {sec.title}
-                    </h3>
-                    <ul className="list-disc pl-6 space-y-1 text-gray-700 text-base">
+                    <div className="flex items-center gap-3 mb-2">
+                      <span className="text-2xl">{sec.icon}</span>
+                      <h3
+                        className={`text-xl ${language === 'mn' ? 'font-bold font-sans' : 'font-bold'} text-[#00879E]`}
+                        style={language === 'mn' ? { fontFamily: 'Arial, sans-serif' } : {}}
+                      >
+                        {sec.title}
+                      </h3>
+                    </div>
+                    <ul className="list-disc pl-8 space-y-2 text-gray-700 text-base">
                       {sec.bullets.map((b, j) => (
-                        <li key={j}>{b}</li>
+                        <li
+                          key={j}
+                          className={language === 'mn' ? 'font-normal font-sans' : ''}
+                          style={language === 'mn' ? { fontFamily: 'Arial, sans-serif' } : {}}
+                        >
+                          {b}
+                        </li>
                       ))}
                     </ul>
+                    {idx < extraSection[language].sections.length - 1 ? (
+                      <hr className="my-6 border-gray-200" />
+                    ) : null}
                   </div>
-                ))}
-              </div>
-              <div className="mt-6 text-center text-lg font-semibold text-[#00879E]">
-                <FaStar className="inline-block mr-2 text-xl align-middle" />
-                {extraSection[language].cta}
-              </div>
-            </div>
-          </div>
+                );
+              })}
+                </div>
+            {/* Call to action */}
+            <div className="mt-6 text-center text-xl font-semibold text-[#00879E]">
+              <FaStar className="inline-block mr-2 text-2xl align-middle" />
+              {extraSection[language].cta}
+                  </div>
+                </div>
           {/* --- New context section end --- */}
 
           {langContent.sections.map((section, idx) => (
@@ -259,9 +284,9 @@ export default function ServicesPage() {
           ))}
           <div className="mt-12 text-center text-xl font-semibold text-[#00879E]">
             {langContent.cta}
-          </div>
+        </div>
         </section>
       </main>
-    </div>
+      </div>
   );
 } 

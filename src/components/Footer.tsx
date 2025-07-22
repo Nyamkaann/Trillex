@@ -24,8 +24,8 @@ export default function Footer() {
                 <li key={i}>
                   <Link href={link.href} className="text-sm text-gray-300 hover:text-white transition-colors">
                     {link[language]}
-                  </Link>
-                </li>
+                </Link>
+              </li>
               ))}
             </ul>
           </div>

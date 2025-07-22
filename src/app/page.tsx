@@ -209,7 +209,7 @@ export default function Home() {
             <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
               {language === 'en' 
                 ? 'We are proud to work with leading organizations and institutions that share our vision for sustainable development and financial inclusion.'
-                : 'Тогтвортой хөгжил, санхүүгийн хүртээмжийн талаарх бидний алсын харааг хуваалцдаг тэргүүлэгч байгууллагууд, байгууллагтай хамтран ажиллахад бид горьдог.'
+                : 'Тогтвортой хөгжил, санхүүгийн хүртээмжийн талаарх бидний алсын харааг хуваалцдаг тэргүүлэгч байгууллагууд.'
               }
             </p>
           </div>
@@ -260,13 +260,13 @@ export default function Home() {
           <h2 className="text-3xl font-bold mb-6">
             {language === 'en' 
               ? 'Ready to Transform Your Organization?'
-              : 'Таны байгууллагыг өөрчлөхөд бэлэн үү?'
+              : 'Таны бизнесийн өсөлтөнд бэлэн үү?'
             }
           </h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto">
             {language === 'en'
               ? 'Let us help you achieve sustainable growth and development through our expert consulting services.'
-              : 'Бидний мэргэжлийн зөвлөх үйлчилгээгээр тогтвортой хөгжил, дэвшилд хүрэхэд тусалъя.'
+              : 'Бид мэргэжлийн зөвлөх үйлчилгээгээр таны бизнесийг тогтвортой хөгжил, дэвшилд хүрэхэд тусалъя.'
             }
           </p>
           <Link

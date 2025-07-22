@@ -51,7 +51,7 @@ export default function Contact() {
               <p className="text-gray-600 mb-6">
                 {language === 'en'
                   ? "Ready to take your organization to the next level? Contact us today to discuss your needs and discover how our expertise can drive your success."
-                  : "Таны байгууллагыг дараагийн түвшинд аваачхад бэлэн үү? Өнөөдөр бидэнтэй холбогдож, таны хэрэгцээг хэлэлцээд, бидний мэргэжлийн ур чадвар таны амжилтыг хэрхэн удирдаж чадах талаар олж мэдээрэй."
+                  : "Байгууллагаа дараагийн шатанд хүргэхийг хүсэж байна уу? Бидэнтэй өнөөдөр холбогдож, таны байгууллагад тохирсон шийдлийг хамтдаа боловсруулъя."
                 }
               </p>
             </div>
@@ -122,6 +122,18 @@ export default function Contact() {
             >
               {language === 'en' ? 'Open Contact Form' : 'Холбоо барих маягт нээх'}
             </a>
+
+            {/* Membership Registration Section */}
+            <div className="mt-3 text-center">
+              <a
+                href="https://forms.gle/hDZeStkBBrVH67Au7"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full block text-center bg-[#00879E] text-white font-medium py-3 px-6 rounded-lg hover:bg-[#007a8a] transition-colors duration-200 text-lg"
+              >
+                {language === 'en' ? 'Register for Membership' : 'Гишүүнчлэлд бүртгүүлэх'}
+              </a>
+            </div>
           </div>
         </div>
       </div>
