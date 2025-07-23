@@ -43,7 +43,7 @@ export default function Footer() {
             <h3 className="text-lg font-semibold">{footer.socialTitle[language]}</h3>
             <div className="flex space-x-6">
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/TrillexMFIconsulting?mibextid=wwXIfr&rdid=KHw8oeyxi1GqAVS7"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-300 hover:text-white transition-colors"
@@ -58,7 +58,7 @@ export default function Footer() {
                 </svg>
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/otgontsetseg-tseveg-874777309/?originalSubdomain=mn"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-300 hover:text-white transition-colors"
@@ -73,7 +73,7 @@ export default function Footer() {
                 </svg>
               </a>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/trillexmfi"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-300 hover:text-white transition-colors"
